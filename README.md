@@ -64,3 +64,23 @@ Requisitos:
 
 **Objetivo:**  
 Asegurarse de que sustituir una subclase por su superclase no rompa el comportamiento del sistema.
+
+---
+
+## 4. **Principio de Segregacion de Interfaces**
+### **Ejercicio: Funciones de impresoras**
+### **Enunciado**
+Diseña un sistema con:
+1. Una interfaz **grande** que tenga:
+    - `printDocument()`
+    - `scanDocument()`
+    - `faxDocument()`
+2. Crea una clase `OldPrinter` que solo imprime y escanea (no tiene fax).
+3. Crea una clase `ModernPrinter` que hace todo.
+4. **Reestructura** el diseño aplicando el principio ISP:
+    - Divide la interfaz grande en interfaces específicas (`Printable`, `Scannable`, `Faxable`).
+    - Ajusta cada clase para implementar solo lo que necesita.
+
+**Objetivo:**  
+Evitar que clases como `OldPrinter` tengan que implementar métodos de fax que no usan.
+
